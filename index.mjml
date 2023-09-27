@@ -19,6 +19,10 @@
                 font-family: 'Lora', sans-serif !important;
             }
 
+            .white-text div {
+                color: #ffffff !important;
+            }
+
             .menu-link  {
                 font-size: 16px !important;
                 text-transform: capitalize !important;
@@ -221,5 +225,50 @@
             </mj-column>
         </mj-section>
         <!-- Testimonials : END -->
+
+        <!-- Footer : BEGIN -->
+        <mj-section background-color="#122A48" >
+            <mj-column css-class="align-to-middle white-text">
+                <mj-image width="90px" padding="0 0 20px" src="img/light_logo.png"/>
+                <mj-raw>
+                    <table align="center" style="text-align: center" role="presentation" cellpadding="0" cellspacing="0" border="0" width="200px">
+                        <tr>
+                            <td>
+                                <img src="img/facebook@2x.png" alt="Facebook icon" width="32" height="auto" border="0" style="max-width: 32px; width: 100%; height: auto;">
+                            </td>
+                            <td>
+                                 <img src="img/twitter@2x.png" alt="Twitter icon" width="32" height="auto" border="0" style="max-width: 32px; width: 100%; height: auto;">
+                            </td>
+                            <td>
+                                <img src="img/linkedin@2x.png" alt="Linkedin icon" width="32" height="auto" border="0" style="max-width: 32px; width: 100%; height: auto;">
+                            </td>
+                            <td>
+                                <img src="img/instagram@2x.png" alt="Instagram icon" width="32" height="auto" border="0" style="max-width: 32px; width: 100%; height: auto;">
+                            </td>
+                        </tr>
+                    </table>
+                </mj-raw>
+                <mj-text padding="10px 0 20px">
+                    Company Name | Company Locations
+                </mj-text>
+                <mj-text padding="0 60px 20px" line-height="15px">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Maecenas a massa a nibh pharetra vehicula. Suspendisse.
+                </mj-text>
+                <mj-text line-height="15px" padding="0 30px 20px">
+                    Questions? Emails us at example@example.com 
+                    <mj-raw><br /></mj-raw>
+                    Questions relating to privacy and the protection of your personal information should be sent to 
+                    example@example.com
+                </mj-text>
+                <mj-text padding="10px 10px">
+                    Changed your mind? You can no-content  at any time.
+                </mj-text>
+                <mj-text padding="10px 10px 30px">
+                    Company | 123 Street Name, City Name, Country Name Post Code AB12 34CD
+                </mj-text>
+            </mj-column>
+        </mj-section>
+        <!-- Footer : END -->
     </mj-body>
 </mjml>
