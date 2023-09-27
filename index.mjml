@@ -1,7 +1,8 @@
 <mjml>
     <mj-head>
-        <mj-font name="Raleway"
-                href="https://fonts.googleapis.com/css?family=Raleway" />
+        <mj-font name="Nunito" name="Lora"
+                href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,400;1,600&family=Nunito:wght@400;500;600&display=swap" />
+                
         <mj-preview>Hello MJML</mj-preview>
         <mj-title>Hello MJML</mj-title>
         <mj-attributes>
@@ -10,29 +11,42 @@
              <mj-class name="mjclass" color="green" font-size="30px" />
         </mj-attributes>
         <mj-style inline="inline">
+            .nunito-font  {
+                font-family: 'Nunito', sans-serif;
+            }
 
+            .lora-font {
+                font-family: 'Lora', sans-serif;
+            }
+
+            .menu-link  {
+                font-size: 16px !important;
+                text-transform: capitalize !important;
+                color: #122b49;
+            }
         </mj-style>
         <mj-breakpoint width="600px" />
     </mj-head>
     <mj-body>
 
         <!-- Company Header -->
-        <mj-section background-color="#f0f0f0"></mj-section>
+        <mj-section background-color="#ffffff">
+            <mj-column>
+                <mj-image width="90px" src="img/logo.png"/>
+            </mj-column>
+        </mj-section>
 
-        <!-- Image Header -->
-        <mj-section background-color="#f0f0f0"></mj-section>
-
-        <!-- Introduction Text -->
-        <mj-section background-color="#fafafa"></mj-section>
-
-        <!-- 2 columns section -->
-        <mj-section background-color="white"></mj-section>
-
-        <!-- Icons -->
-        <mj-section background-color="#fbfbfb"></mj-section>
-
-        <!-- Social icons -->
-        <mj-section background-color="#f0f0f0"></mj-section>
+        <!-- Company Header -->
+        <mj-section background-color="#ffffff">
+            <mj-column>
+                <mj-navbar base-url="" hamburger="hamburguer" ico-color="#333333" css-class="nunito-font">
+                    <mj-navbar-link href="" css-class="menu-link nunito-font">Shop</mj-navbar-link>
+                    <mj-navbar-link href="" css-class="menu-link">Best Seller</mj-navbar-link>
+                    <mj-navbar-link href="" css-class="menu-link">Blog</mj-navbar-link>
+                    <mj-navbar-link href="" css-class="menu-link">Contacts</mj-navbar-link>
+                </mj-navbar>
+            </mj-column>
+        </mj-section>
 
     </mj-body>
 </mjml>
