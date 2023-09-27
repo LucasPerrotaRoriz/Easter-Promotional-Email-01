@@ -28,6 +28,10 @@
             .align-to-middle div{
                 text-align: center !important;
             }
+
+            .button-padding p{
+                padding: 15px 20px !important;
+            }
         </mj-style>
         <mj-breakpoint width="600px" />
     </mj-head>
@@ -52,13 +56,13 @@
             </mj-column>
         </mj-section>
 
-        <!-- Home Header -->
+        <!-- Home section -->
         <mj-section background-color="#CEDDE4" padding="0">
             <mj-column css-class="align-to-middle">
                 <mj-text font-size="24px" font-style="italic" color="#122b49" padding="60px 0 20px">
                     Eggstra - Eggstra
                 </mj-text>
-                <mj-text css-class="lora-font" font-size="50px" letter-spacing="2px" font-weight="bold" line-height="30px" text-transform="uppercase" padding="10px 0 30px" 
+                <mj-text css-class="lora-font" font-size="50px" letter-spacing="2px" font-weight="bold" line-height="50px" text-transform="uppercase" padding="10px 10px 10px" 
                 color="#122b49" css-class="heading h1-heading">
                     Easter Sales
                 </mj-text>
@@ -75,6 +79,25 @@
                     Hurry Up
                 </mj-button>
                 <mj-image width="600px" padding="0" src="img/high-angle-different-beauty-blenders.png"/>
+            </mj-column>
+        </mj-section>
+
+        <!-- Easter sales section -->
+        <mj-section background-color="#ffffff">
+            <mj-column css-class="align-to-middle">
+                <mj-text font-size="15px" font-weight="normal" padding="0 0 20px" color="#122b49">
+                    Easter day sales
+                </mj-text>
+                <mj-text css-class="lora-font" font-size="40px" font-weight="bold" color="#122b49">
+                    Get Your Glow on
+                </mj-text>
+                <mj-text>
+                    Our team of beauty experts have curated the best products for you, along with helpful tips and tricks to 
+                    help you make the most out of your beauty routine.
+                </mj-text>
+                <mj-button css-class="button-padding" font-size="16px" border-radius="10px"background-color="#122b49" color="#ffffff">
+                    Coupon Code: <mj-raw style="font-weight: bold">HAPPYEASTER</mj-raw>
+                </mj-button>
             </mj-column>
         </mj-section>
     </mj-body>
