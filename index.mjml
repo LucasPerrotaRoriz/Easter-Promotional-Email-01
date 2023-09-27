@@ -37,14 +37,15 @@
     </mj-head>
     <mj-body>
 
-        <!-- Company Header -->
+        <!-- Company Header : BEGIN -->
         <mj-section background-color="#ffffff">
             <mj-column>
                 <mj-image width="90px" src="img/logo.png"/>
             </mj-column>
         </mj-section>
+        <!-- Company Header : END -->
 
-        <!-- Company Header -->
+        <!-- Company Header : BEGIN -->
         <mj-section background-color="#ffffff" padding="0 0 10px">
             <mj-column>
                 <mj-navbar base-url="" hamburger="hamburguer" ico-color="#333333" css-class="nunito-font">
@@ -55,8 +56,9 @@
                 </mj-navbar>
             </mj-column>
         </mj-section>
+        <!-- Company Header : END -->
 
-        <!-- Home section -->
+        <!-- Home section : BEGIN -->
         <mj-section background-color="#CEDDE4" padding="0">
             <mj-column css-class="align-to-middle">
                 <mj-text font-size="24px" font-style="italic" color="#122b49" padding="60px 0 20px">
@@ -81,17 +83,18 @@
                 <mj-image width="600px" padding="0" src="img/high-angle-different-beauty-blenders.png"/>
             </mj-column>
         </mj-section>
+        <!-- Home section : END -->
 
-        <!-- Easter sales section -->
+        <!-- Easter sales section : BEGIN -->
         <mj-section background-color="#ffffff">
             <mj-column css-class="align-to-middle">
-                <mj-text font-size="15px" font-weight="normal" padding="0 0 20px" color="#122b49">
+                <mj-text font-size="15px" font-weight="bold" padding="0 0 20px" color="#122b49">
                     Easter day sales
                 </mj-text>
-                <mj-text css-class="lora-font" font-size="40px" font-weight="bold" color="#122b49">
+                <mj-text css-class="lora-font" font-weight="light" font-size="40px" font-weight="bold" padding="0 0 20px" color="#122b49">
                     Get Your Glow on
                 </mj-text>
-                <mj-text>
+                <mj-text font-size="16px" line-height="24px" padding="0 22px 10px">
                     Our team of beauty experts have curated the best products for you, along with helpful tips and tricks to 
                     help you make the most out of your beauty routine.
                 </mj-text>
@@ -100,5 +103,67 @@
                 </mj-button>
             </mj-column>
         </mj-section>
+        <!-- Easter sales section : END -->
+
+        <!-- 2-Column Features Row 1 : BEGIN -->
+        <mj-section background-color="#ffffff">
+            <mj-column css-class="align-to-middle">
+                <mj-image width="310px" src="img/image_10.png"/>
+                <mj-text css-class="lora-font" font-size="25px" padding="10px 0" color="#122b49">
+                    Face Oil
+                </mj-text>
+                <mj-text font-size="16px" line-height="20px" padding="0 20px 10px" color="#122b49">
+                    The best face oils nourish the skin and provide other benefits, 
+                    like antioxidant protection, anti-aging properties, and more.
+                </mj-text>
+                <mj-button css-class="button-padding" font-size="16px" border-radius="10px"background-color="#122b49" color="#ffffff">
+                    SHOP NOW |  <mj-raw style="font-weight: bold">$34</mj-raw>
+                </mj-button>
+            </mj-column>
+
+            <mj-column css-class="align-to-middle">
+                <mj-image width="310px" src="img/image_11.png"/>
+                <mj-text css-class="lora-font" font-size="25px" padding="10px 0" color="#122b49">
+                    Face Cream
+                </mj-text>
+                <mj-text font-size="16px" line-height="20px" padding="0 20px 10px" color="#122b49">
+                    Applying a face cream is a fundamental step in any beauty routine. Make sure you choose the right cream for your skin type.
+                </mj-text>
+                <mj-button css-class="button-padding" font-size="16px" border-radius="10px"background-color="#122b49" color="#ffffff">
+                    SHOP NOW |  <mj-raw style="font-weight: bold">$24</mj-raw>
+                </mj-button>
+            </mj-column>
+        </mj-section>
+        <!-- 2-Column Features Row 1 : END -->
+
+        <!-- 2-Column Features Row 2 : BEGIN -->
+         <mj-section background-color="#ffffff">
+            <mj-column css-class="align-to-middle">
+                <mj-image width="310px" src="img/image_12.png"/>
+                <mj-text css-class="lora-font" font-size="25px" padding="10px 0" color="#122b49">
+                    Contour Eye Cream
+                </mj-text>
+                <mj-text font-size="16px" line-height="20px" padding="0 20px 10px" color="#122b49">
+                     Our fragrance &amp; cruelty free, powerfully targeted eye creams firm &amp; revitalize your eyes.
+                </mj-text>
+                <mj-button css-class="button-padding" font-size="16px" border-radius="10px"background-color="#122b49" color="#ffffff">
+                    SHOP NOW |  <mj-raw style="font-weight: bold">$28</mj-raw>
+                </mj-button>
+            </mj-column>
+
+            <mj-column css-class="align-to-middle">
+                <mj-image width="310px" src="img/image_13.png"/>
+                <mj-text css-class="lora-font" font-size="25px" padding="10px 0" color="#122b49">
+                    Makeup Remover
+                </mj-text>
+                <mj-text font-size="16px" line-height="20px" padding="0 20px 10px" color="#122b49">
+                    Among testers, 100% found that the balm washed off easily and didn’t cause breakouts or irritation.
+                </mj-text>
+                <mj-button css-class="button-padding" font-size="16px" border-radius="10px"background-color="#122b49" color="#ffffff">
+                    SHOP NOW |  <mj-raw style="font-weight: bold">$12</mj-raw>
+                </mj-button>
+            </mj-column>
+        </mj-section>
+        <!-- 2-Column Features Row 2 : END -->
     </mj-body>
 </mjml>
