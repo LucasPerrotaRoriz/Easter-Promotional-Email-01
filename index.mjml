@@ -11,18 +11,22 @@
              <mj-class name="mjclass" color="green" font-size="30px" />
         </mj-attributes>
         <mj-style inline="inline">
-            .nunito-font  {
-                font-family: 'Nunito', sans-serif;
+            .nunito-font {
+                font-family: 'Nunito', sans-serif !important;
             }
 
-            .lora-font {
-                font-family: 'Lora', sans-serif;
+            .lora-font div {
+                font-family: 'Lora', sans-serif !important;
             }
 
             .menu-link  {
                 font-size: 16px !important;
                 text-transform: capitalize !important;
                 color: #122b49;
+            }
+
+            .align-to-middle div{
+                text-align: center !important;
             }
         </mj-style>
         <mj-breakpoint width="600px" />
@@ -37,16 +41,41 @@
         </mj-section>
 
         <!-- Company Header -->
-        <mj-section background-color="#ffffff">
+        <mj-section background-color="#ffffff" padding="0 0 10px">
             <mj-column>
                 <mj-navbar base-url="" hamburger="hamburguer" ico-color="#333333" css-class="nunito-font">
                     <mj-navbar-link href="" css-class="menu-link nunito-font">Shop</mj-navbar-link>
-                    <mj-navbar-link href="" css-class="menu-link">Best Seller</mj-navbar-link>
-                    <mj-navbar-link href="" css-class="menu-link">Blog</mj-navbar-link>
-                    <mj-navbar-link href="" css-class="menu-link">Contacts</mj-navbar-link>
+                    <mj-navbar-link href="" css-class="menu-link nunito-font">Best Seller</mj-navbar-link>
+                    <mj-navbar-link href="" css-class="menu-link nunito-font">Blog</mj-navbar-link>
+                    <mj-navbar-link href="" css-class="menu-link nunito-font">Contacts</mj-navbar-link>
                 </mj-navbar>
             </mj-column>
         </mj-section>
 
+        <!-- Home Header -->
+        <mj-section background-color="#CEDDE4" padding="0">
+            <mj-column css-class="align-to-middle">
+                <mj-text font-size="24px" font-style="italic" color="#122b49" padding="60px 0 20px">
+                    Eggstra - Eggstra
+                </mj-text>
+                <mj-text css-class="lora-font" font-size="50px" letter-spacing="2px" font-weight="bold" line-height="30px" text-transform="uppercase" padding="10px 0 30px" 
+                color="#122b49" css-class="heading h1-heading">
+                    Easter Sales
+                </mj-text>
+                <mj-text font-size="40px" font-weight="bold" text-transform="uppercase" color="#122b49" padding="0 0 20px">
+                    30% Off
+                </mj-text>
+                <mj-text font-size="16px" line-height="24px" padding="0 58px 20px" color="#122b49">
+                    Spring is in full bloom, and we're excited to bring you the latest 
+                    beauty trends and essential products to help you look and feel your 
+                    best this season. We have everything you need to achieve that fresh 
+                    and glowing Easter look.
+                </mj-text>
+                <mj-button font-size="16px" font-weight="bold" border="1px solid #122b49" border-radius="10px" background-color="#cedde4" color="#122b49">
+                    Hurry Up
+                </mj-button>
+                <mj-image width="600px" padding="0" src="img/high-angle-different-beauty-blenders.png"/>
+            </mj-column>
+        </mj-section>
     </mj-body>
 </mjml>
