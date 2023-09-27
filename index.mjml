@@ -165,5 +165,61 @@
             </mj-column>
         </mj-section>
         <!-- 2-Column Features Row 2 : END -->
+
+        <!-- 3-Column Features : BEGIN -->
+        <mj-section background-color="#d98483" padding="30px 0">
+            <mj-column css-class="align-to-middle">
+                <mj-image width="65px" src="img/Group-1.png"/>
+                <mj-text font-size="18px" color="#ffffff">Cruelty Free</mj-text>
+            </mj-column>
+
+            <mj-column css-class="align-to-middle">
+                <mj-image width="65px" src="img/Group-2.png"/>
+                <mj-text font-size="18px" color="#ffffff">No Nasty Toxins</mj-text>
+            </mj-column>
+
+            <mj-column css-class="align-to-middle">
+                <mj-image width="65px" src="img/Group-3.png"/>
+                <mj-text font-size="18px" color="#ffffff">1% to Charity</mj-text>
+            </mj-column>
+        </mj-section>
+        <!-- 3-Column Features : END -->
+
+        <!-- Testimonials : BEGIN -->
+        <mj-section background-color="#cedde4">
+            <mj-column css-class="align-to-middle">
+                <mj-text font-size="15px" font-weight="bold" padding="30px 0 20px" color="#122b49">
+                    Testimonials
+                </mj-text>
+                <mj-text font-family="lora-font" font-size="30px" font-weight="light" padding="0" color="#122b49">
+                    What Our Customers Say
+                </mj-text>
+            </mj-column>
+        </mj-section>
+
+        <mj-section background-color="#cedde4" padding="10px 0 30px">
+            <mj-column css-class="align-to-middle">
+                <mj-text font-size="20px" padding="10px 0">
+                    Lucas
+                </mj-text>
+                <mj-text font-size="15px" line-height="20px" padding="0 10px">
+                    I would highly recommend these products to anyone who is looking for
+                    high-quality skincare products that deliver real results.
+                </mj-text>
+                <mj-image width="103px" src="img/review-2.png"/>
+            </mj-column>
+
+            <mj-column css-class="align-to-middle">
+                <mj-text font-size="20px" padding="10px 0">
+                    Laura
+                </mj-text>
+                <mj-text font-size="15px" line-height="20px" padding="0 10px">
+                    The eye contour cream is a luxurious, rich cream that is specifically 
+                    formulated for the delicate skin around the eyes. 
+                </mj-text>
+                <mj-image width="103px" src="img/review.png"/>
+            </mj-column>
+        </mj-section>
+        <!-- Testimonials : END -->
     </mj-body>
 </mjml>
