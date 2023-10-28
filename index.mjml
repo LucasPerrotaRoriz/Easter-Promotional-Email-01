@@ -174,17 +174,17 @@
         <mj-section background-color="#d98483" padding="30px 0">
             <mj-column css-class="align-to-middle">
                 <mj-image width="65px" src="img/Group-1.png"/>
-                <mj-text font-size="18px" color="#ffffff">Cruelty Free</mj-text>
+                <mj-text font-size="18px" padding-bottom="15px" color="#ffffff">Cruelty Free</mj-text>
             </mj-column>
 
             <mj-column css-class="align-to-middle">
                 <mj-image width="65px" src="img/Group-2.png"/>
-                <mj-text font-size="18px" color="#ffffff">No Nasty Toxins</mj-text>
+                <mj-text font-size="18px" padding-bottom="15px" color="#ffffff">No Nasty Toxins</mj-text>
             </mj-column>
 
             <mj-column css-class="align-to-middle">
                 <mj-image width="65px" src="img/Group-3.png"/>
-                <mj-text font-size="18px" color="#ffffff">1% to Charity</mj-text>
+                <mj-text font-size="18px" padding-bottom="15px" color="#ffffff">1% to Charity</mj-text>
             </mj-column>
         </mj-section>
         <!-- 3-Column Features : END -->
