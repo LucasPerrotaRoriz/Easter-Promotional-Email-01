@@ -228,6 +228,35 @@
 			.column-empty2 { padding-bottom: 30px !important; }
 
 			.content-spacing { width: 15px !important; }
+
+			.stack-column,
+	        .stack-column-center {
+	            display: block !important;
+	            width: 100% !important;
+	            max-width: 100% !important;
+	            direction: ltr !important;
+	        }
+	        /* And center justify these ones. */
+	        .stack-column-center {
+	            text-align: center !important;
+	        }
+
+	        /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+	        .center-on-narrow {
+	            text-align: center !important;
+	            display: block !important;
+	            margin-left: auto !important;
+	            margin-right: auto !important;
+	            float: none !important;
+	        }
+	        table.center-on-narrow {
+	            display: inline-block !important;
+	        }
+
+	        /* What it does: Adjust typography on small screens to improve readability */
+	        .email-container p {
+	            font-size: 17px !important;
+	        }
 		}
 
 		 /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
@@ -255,7 +284,7 @@
 	<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#F5F4F4">
         <tr>
             <td align="center" valign="top">
-                <table cellpadding="0" cellspacing="0" border="0" width="650">
+                <table cellpadding="0" cellspacing="0" border="0" width="650" class="mobile-shell">
                     <tr>
                         <td class="td" style="width: 650px; min-width: 650px; font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0; Margin: 0">
                             <!-- Logo : BEGIN -->
@@ -270,7 +299,7 @@
                                                             <th class="column" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; Margin:0" valign="top">
                                                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                                     <tr>
-                                                                        <td class="center" style="font-size: 0pt; line-height: 0pt; margin: 0; padding: 0;">
+                                                                        <td class="center m-center" style="font-size: 0pt; line-height: 0pt; margin: 0; padding: 0;">
                                                                             <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/logo.png?raw=true"
                                                                             width="92" height="64" border="0" alt="">
                                                                         </td>
@@ -288,65 +317,63 @@
                             <!-- Logo : END -->
 
                             <!-- Navigation : BEGIN -->
-                            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
-                                <tr>
-                                    <td align="center" style="padding: 20px 0;">
-                                        <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff">
-                                            <tr>
-                                                <td>
-                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                        <tr>
-                                                            <th align="center" class="column" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0; vertical-align: top; Margin: 0">
-                                                                <table border="0" cellspacing="0" cellpadding="0">
-                                                                    <tr>
-                                                                        <td style="font-family: 'Nunito', Arial, sans-serif; font-size: 17px; line-height: 20px; color: #122b49;">
-                                                                            <a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
-                                                                                <span style="text-decoration: none; color: #122b49;">
-                                                                                    Shop
-                                                                                </span>
-                                                                            </a>
-                                                                        </td>
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff">
+								<tr>
+									<td align="center" style="padding: 20px 0;">
+										<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff">
+											<tr>
+												<td align="center">
+													<table cellpadding="0" cellspacing="0" border="0">
+														<tr>
+															<th class="column" width="30" style="font-family: 'Nunito', Arial, sans-serif; font-size: 17px; text-align: center; line-height: 22px; 
+															color: #122b49;">
+																<span style="text-decoration: none; color: #122b49;">
+																	<a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
+																		Shop
+																	</a>
+																</span>
+															</th>
 
-                                                                        <td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:left" width="30"></td>
+															<th class="column-empty" width="20" style="font-size: 0pt; line-height: 0pt; margin: 0; padding: 0;"></th>
 
-                                                                        <td style="font-family: 'Nunito', Arial, sans-serif; font-size: 17px; line-height: 20px; color: #122b49;">
-                                                                            <a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
-                                                                                <span style="text-decoration: none; color: #122b49;">
-                                                                                    Best Seller
-                                                                                </span>
-                                                                            </a>
-                                                                        </td>
+															<th class="column" width="90" style="font-family: 'Nunito', Arial, sans-serif; font-size: 17px; line-height: 22px; 
+															color: #122b49;">
+																<span style="text-decoration: none; color: #122b49;">
+																	<a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
+																		Best Seller
+																	</a>
+																</span>
+															</th>
 
-                                                                        <td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:left" width="30"></td>
+															<th class="column-empty" width="20" style="font-size: 0pt; line-height: 0pt; margin: 0; padding: 0;"></th>
 
-                                                                        <td style="font-family: 'Nunito', Arial, sans-serif; font-size: 17px; line-height: 20px; color: #122b49;">
-                                                                            <a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
-                                                                                <span style="text-decoration: none; color: #122b49;">
-                                                                                    Blog
-                                                                                </span>
-                                                                            </a>
-                                                                        </td>
+															<th class="column" width="30" style="font-family: 'Nunito', Arial, sans-serif; font-size: 17px; line-height: 22px; 
+															color: #122b49;">
+																<span style="text-decoration: none; color: #122b49;">
+																	<a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
+																		Blog
+																	</a>
+																</span>
+															</th>
 
-                                                                        <td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:left" width="30"></td>
+															<th class="column-empty" width="20" style="font-size: 0pt; line-height: 0pt; margin: 0; padding: 0;"></th>
 
-                                                                        <td style="font-family: 'Nunito', Arial, sans-serif; font-size: 17px; line-height: 20px; color: #122b49;">
-                                                                            <a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
-                                                                                <span style="text-decoration: none; color: #122b49;">
-                                                                                    Contacts
-                                                                                </span>
-                                                                            </a>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                            </th>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
+															<th class="column" width="30" style="font-family: 'Nunito', Arial, sans-serif; font-size: 17px; line-height: 22px; 
+															color: #122b49;">
+																<span style="text-decoration: none; color: #122b49;">
+																	<a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
+																		Contacts
+																	</a>
+																</span>
+															</th>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
                             <!-- Navigation : END -->
                         </td>
                     </tr>
