@@ -1,135 +1,187 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
-	<!--[if gte mso 9]>
-	<xml>
-		<o:OfficeDocumentSettings>
-		<o:AllowPNG/>
-		<o:PixelsPerInch>96</o:PixelsPerInch>
-		</o:OfficeDocumentSettings>
-	</xml>
-	<![endif]-->
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="format-detection" content="date=no" />
-	<meta name="format-detection" content="address=no" />
-	<meta name="format-detection" content="telephone=no" />
-	<meta name="x-apple-disable-message-reformatting" />
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: https://web.archive.org/web/20190717120616/http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
     <!--[if !mso]><!-->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&family=Tinos:wght@400;700&display=swap" rel="stylesheet">
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
     <!--<![endif]-->
-	<title>Email Template</title>
-	<!--[if gte mso 9]>
-	<style type="text/css" media="all">
-		sup { font-size: 100% !important; }
-	</style>
-	<![endif]-->
-	
 
-	<style type="text/css" media="screen">
-		/* What it does: Tells the email client that both light and dark styles are provided. A duplicate of meta color-scheme meta tag above. */
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Tells the email client that both light and dark styles are provided. A duplicate of meta color-scheme meta tag above. */
         :root {
-			color-scheme: light dark;
-			supported-color-schemes: light dark;
-		}
+          color-scheme: light dark;
+          supported-color-schemes: light dark;
+        }
 
-		  /* What it does: Remove spaces around the email design added by some email clients. */
-		  /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
-		html,
-		body {
-			margin: 0 auto !important;
-			padding: 0 !important;
-			height: 100% !important;
-			width: 100% !important;
-		}
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
 
-		/* What it does: Stops email clients resizing small text. */
-		* {
-			-ms-text-size-adjust: 100%;
-			-webkit-text-size-adjust: 100%;
-		}
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
 
-		/* What it does: Centers email on Android 4.4 */
-		div[style*="margin: 16px 0"] {
-			margin: 0 !important;
-		}
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
 
-		/* What it does: forces Samsung Android mail clients to use the entire viewport */
-		#MessageViewBody, #MessageWebViewDiv{
-			width: 100% !important;
-		}
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
 
-		h1, h2, h3, h4 {
-		margin: 0 !important;
-		padding: 0 !important;
-		}
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
 
-		p {
-		margin: 0 !important;
-		padding: 0 !important;
-		}
+        /* What it does: Replaces default bold style. */
+        th {
+            font-weight: normal;
+        }
 
-		/* What it does: Stops Outlook from adding extra spacing to tables. */
-		table,
-		td {
-			mso-table-lspace: 0pt !important;
-			mso-table-rspace: 0pt !important;
-		}
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
 
-		/* What it does: Replaces default bold style. */
-		th {
-			font-weight: normal;
-		}
+        h1, h2, h3, h4 {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
 
-		/* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
-		a {
-			text-decoration: none;
-		}
+        p {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
 
-		/* What it does: Uses a better rendering method when resizing images in IE. */
-		img {
-			-ms-interpolation-mode:bicubic;
-		}
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
 
-		/* What it does: A work-around for email clients meddling in triggered links. */
-		a[x-apple-data-detectors],  /* iOS */
-		.unstyle-auto-detected-links a,
-		.aBn {
-			border-bottom: 0 !important;
-			cursor: default !important;
-			color: inherit !important;
-			text-decoration: none !important;
-			font-size: inherit !important;
-			font-family: inherit !important;
-			font-weight: inherit !important;
-			line-height: inherit !important;
-		}
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
 
-		/* What it does: Prevents Gmail from changing the text color in conversation threads. */
-		.im {
-			color: inherit !important;
-		}
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
 
-		/* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
-		.a6S {
-			display: none !important;
-			opacity: 0.01 !important;
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
 		}
 		/* If the above doesn't work, add a .g-img class to any image in question. */
 		img.g-img + div {
-			display: none !important;
+		   display: none !important;
 		}
 
-		/* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
-		/* Create one of these media queries for each additional viewport size you'd like to fix */
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
 
-		.mcnPreviewText { display: none !important; }
-		
-		/* Mobile styles */
-		@media only screen and (max-device-width:480px), only screen and (max-width:480px) {
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: #555555 !important;
+	        border-color: #555555 !important;
+	    }
+
+        @media only screen and (max-device-width:480px), only screen and (max-width:480px) {
 			.mobile-shell { width: 100% !important; min-width: 100% !important; }
 			
 			.m-center { text-align: center !important; }
@@ -144,7 +196,7 @@
 			.m-hide { 
 				display: none !important; 
 				width: 0 !important;
-				height: 0 !important; 
+			 	height: 0 !important; 
 				font-size: 0 !important; 
 				line-height: 0 !important; 
 				min-height: 0 !important; 
@@ -173,17 +225,21 @@
 
 			.p30-15-0 { padding: 30px 15px 0px 15px !important; }
 
-			.pt-30 { padding-top: 30px !important;}
+            .pt-10 { padding-top: 10px !important; }
 
-			.pb-10 { padding-bottom: 10px !important; }
+            .pt-20 { padding-top: 20px !important; }
 
-			.pb-20 { padding-bottom: 20px !important; }
+			.pt-30 { padding-top: 30px !important; }
+
+            .pb-10 { padding-bottom: 10px !important; }
+
+            .pb-20 { padding-bottom: 20px !important; }
 
 			.pb-30 { padding-bottom: 30px !important; }
 
-			.pb-40 { padding-bottom: 40px !important; }
+			.pb-30-0 { padding: 30px 0px !important; }
 
-			.p30-0 { padding: 30px 0px !important; }
+            .text-pd { padding: 0 10px 30px !important; }
 			
 			.nopt { padding-top: 0px !important; }
 
@@ -193,17 +249,21 @@
 
 			.content { padding: 30px 15px !important; }
 
-			.bt30 { border-top: 30px solid #ffffff !important; }
+			.bt150 { border-top: 30px solid #ffffff !important; }
 
-			.pb0 { padding-bottom: 0px !important; }
+			.entry { padding-bottom: 30px !important; }
 
+			.pb60m { padding-bottom: 0px !important; }
+
+			.separator { padding-top: 30px !important; }
+			
 			.box { padding: 30px 15px !important; }
+
+			.box2 { padding: 30px 15px !important; }
 
 			.pb60 { padding-bottom: 30px !important; }
 
-			.h1 { font-size: 44px !important; line-height: 48px !important; }
-
-			.h2 { font-size: 22px !important; line-height: 26px !important; }
+			.h2 { font-size: 44px !important; line-height: 48px !important; }
 
 			.title { font-size: 24px !important; line-height: 28px !important; }
 
@@ -229,787 +289,841 @@
 
 			.content-spacing { width: 15px !important; }
 
-			.stack-column,
-	        .stack-column-center {
-	            display: block !important;
-	            width: 100% !important;
-	            max-width: 100% !important;
-	            direction: ltr !important;
-	        }
-	        /* And center justify these ones. */
-	        .stack-column-center {
-	            text-align: center !important;
-	        }
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
 
-	        /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
-	        .center-on-narrow {
-	            text-align: center !important;
-	            display: block !important;
-	            margin-left: auto !important;
-	            margin-right: auto !important;
-	            float: none !important;
-	        }
-	        table.center-on-narrow {
-	            display: inline-block !important;
-	        }
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
 
-	        /* What it does: Adjust typography on small screens to improve readability */
-	        .email-container p {
-	            font-size: 17px !important;
-	        }
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+
+		@media screen and (max-width: 600px) {
+			.email-container {
+				width: 100% !important;
+				margin: auto !important;
+			}
 		}
 
-		 /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
-		@media only screen and (min-device-width:320px) and (max-device-width:374px) {
-            u ~ div .email-container {
-                min-width: 320px !important;
+        /* Dark Mode Styles : BEGIN */
+        @media (prefers-color-scheme: dark) {
+            .email-bg {
+                background: #111111 !important;
+            }
+            .darkmode-bg {
+                background: #222222 !important;
+            }
+            h1,
+            h2,
+            h3,
+            p,
+            li,
+            .darkmode-text,
+            .email-container a:not([class]) {
+                color: #F7F7F9 !important;
+            }
+            td.button-td-primary,
+            td.button-td-primary a {
+                background: #ffffff !important;
+                border-color: #ffffff !important;
+                color: #222222 !important;
+            }
+            td.button-td-primary:hover,
+            td.button-td-primary a:hover {
+                background: #cccccc !important;
+                border-color: #cccccc !important;
+            }
+            .footer td {
+                color: #aaaaaa !important;
+            }
+            .darkmode-fullbleed-bg {
+                background-color: #0F3016 !important;
             }
         }
-        /* iPhone 6, 6S, 7, 8, and X */
-        @media only screen and (min-device-width:375px) and (max-device-width:413px) {
-            u ~ div .email-container {
-                min-width: 375px !important;
-            }
-        }
-        /* iPhone 6+, 7+, and 8+ */
-        @media only screen and (min-device-width:414px) {
-            u ~ div .email-container {
-                min-width: 414px !important;
-            }
-        }
-	</style>
+        /* Dark Mode Styles : END */
+    </style>
+    <!-- Progressive Enhancements : END -->
 </head>
-<body class="body" style="padding:0 !important; margin:0 !important; display:block !important; min-width:100% !important; width:100% !important; background:#F5F4F4; -webkit-text-size-adjust:none">
-	<!-- Email Body: BEGIN -->
-	<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#F5F4F4">
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #F5F4F4;" class="email-bg">
+    <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #F5F4F4;" class="email-bg">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F5F4F4;" class="email-bg">
+    <tr>
+    <td>
+    <![endif]-->
+  
+    <!-- Visually Hidden Preheader Text : BEGIN -->
+    <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+        (Optional) This text will appear in the inbox preview, but not the email body. It can be used to supplement the email subject line or even summarize the email's contents. Extended text preheaders (~490 characters) seems like a better UX for anyone using a screenreader or voice-command apps like Siri to dictate the contents of an email. If this text is not included, email clients will automatically populate it using the text (including image alt text) at the start of the email's body.
+    </div>
+    <!-- Visually Hidden Preheader Text : END -->
+
+    <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+    <!-- Preview Text Spacing Hack : BEGIN -->
+    <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    </div>
+    <!-- Preview Text Spacing Hack : END -->
+
+    <!-- Email Body : BEGIN -->
+    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="650" style="margin: auto;" class="email-container">
+        <!-- Logo : BEGIN -->
         <tr>
-            <td align="center" valign="top">
-                <table cellpadding="0" cellspacing="0" border="0" width="650" class="mobile-shell">
+            <td>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
                     <tr>
-                        <td class="td" style="width: 650px; min-width: 650px; font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0; Margin: 0">
-                            
-							<!-- Logo : BEGIN -->
-                            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
-                                <tr>
-                                    <td align="center" style="padding: 20px 0 10px;">
-                                        <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff">
-                                            <tr>
-                                                <td align="center">
-                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                        <tr>
-                                                            <th class="column" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; Margin:0" valign="top">
-                                                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                    <tr>
-                                                                        <td class="center m-center" style="font-size: 0pt; line-height: 0pt; margin: 0; padding: 0; text-align: center;">
-                                                                            <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/logo.png?raw=true"
-                                                                            width="92" height="64" border="0" alt="">
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                            </th>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                            <!-- Logo : END -->
-
-                            <!-- Navigation : BEGIN -->
-                            <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff">
-								<tr>
-									<td align="center" style="padding: 20px 0;">
-										<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff">
-											<tr>
-												<td align="center">
-													<table cellpadding="0" cellspacing="0" border="0">
-														<tr>
-															<th class="column" width="45" style="font-family: 'Nunito', Arial, sans-serif; font-size: 17px; text-align: center; line-height: 22px; 
-															color: #122b49;">
-																<span style="text-decoration: none; color: #122b49;">
-																	<a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
-																		Shop
-																	</a>
-																</span>
-															</th>
-
-															<th class="column-empty" width="20" style="font-size: 0pt; line-height: 0pt; margin: 0; padding: 0;"></th>
-
-															<th class="column" width="90" style="font-family: 'Nunito', Arial, sans-serif; font-size: 17px; line-height: 22px; 
-															color: #122b49;">
-																<span style="text-decoration: none; color: #122b49;">
-																	<a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
-																		Best Seller
-																	</a>
-																</span>
-															</th>
-
-															<th class="column-empty" width="20" style="font-size: 0pt; line-height: 0pt; margin: 0; padding: 0;"></th>
-
-															<th class="column" width="45" style="font-family: 'Nunito', Arial, sans-serif; font-size: 17px; line-height: 22px; 
-															color: #122b49;">
-																<span style="text-decoration: none; color: #122b49;">
-																	<a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
-																		Blog
-																	</a>
-																</span>
-															</th>
-
-															<th class="column-empty" width="20" style="font-size: 0pt; line-height: 0pt; margin: 0; padding: 0;"></th>
-
-															<th class="column" width="45" style="font-family: 'Nunito', Arial, sans-serif; font-size: 17px; line-height: 22px; 
-															color: #122b49;">
-																<span style="text-decoration: none; color: #122b49;">
-																	<a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
-																		Contacts
-																	</a>
-																</span>
-															</th>
-														</tr>
-													</table>
-												</td>
-											</tr>
-										</table>
-									</td>
-								</tr>
-							</table>
-                            <!-- Navigation : END -->
-
-							<!-- Home : BEGIN -->
-							<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#CEDCE5">
-								<tr>
-									<td align="center" style="padding: 10px 0 0;">
-										<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#CEDCE5">
-											<tr>
-												<td align="center" style="padding: 0 20px;">
-													<table cellpadding="0" cellspacing="0" border="0" width="100%">
-														<tr>
-															<td style="font-family: 'Nunito', Arial, sans-serif; line-height: 32px; font-style: italic; 
-															text-align: center; padding-top: 40px; padding-bottom: 20px; color: #122b49;">
-																<h2 style="font-size: 24px; font-weight: normal;">
-																	Eggstra - Eggstra
-																</h2>
-															</td>
-														</tr>
-														<tr>
-															<td style="font-family: 'Tinos', Arial, sans-serif; line-height: 54px; text-align: center; text-transform: uppercase; padding-bottom: 20px; 
-															color: #122b49;">
-																<h2 style="font-size: 50px;">
-																	Easter Sales
-																</h2>
-															</td>
-														</tr>
-														<tr>
-															<td style="font-family: Arial, sans-serif; line-height: 32px; text-align: center; text-transform: uppercase; padding-bottom: 30px; 
-															color: #122b49;">
-																<h2 style="font-size: 40px;">
-																	<strong>30% Off</strong>
-																</h2>
-															</td>
-														</tr>
-														<tr>
-															<td style="font-family: Arial, sans-serif; font-size: 18px; line-height: 28px; text-align: center; padding-bottom: 30px; color: #122b49;">
-																<p>
-																	Spring is in full bloom, and we're excited to bring you the latest beauty <span class="em_hide"><br /></span>
-																	trends and essential products to help you look and feel your best this <span class="em_hide"><br /></span>
-																	season. We have everything you need to achieve that fresh and <span class="em_hide"><br /></span>
-																	glowing Easter look. <span class="em_hide"><br /></span>
-																</p>
-															</td>
-														</tr>
-													</table>
-												</td>
-											</tr>
-											<tr>
-												<td align="center" style="padding-bottom: 10px;">
-													<table cellpadding="0" cellspacing="0" border="0" width="150">
-														<tr>
-															<td style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 24px; text-transform: uppercase; text-align: center; 
-															padding: 12px 20px; border-radius: 10px; border: 1px solid #122b49;  background-color: transparent; color: #122b49;">
-																<span style="text-decoration: none; color: #122b49;">
-																	<a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
-																		<span>Hurry Up</span>
-																	</a>
-																</span>
-															</td>
-														</tr>
-													</table>
-												</td>
-											</tr>
-											<tr>
-												<td align="center">
-													<table cellpadding="0" cellspacing="0" border="0" width="100%">
-														<tr>
-															<td class="fluid-img" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
-																<img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/high-angle-different-beauty-blenders.png?raw=true"
-																width="650" height="330" border="0" alt="">
-															</td>
-														</tr>
-													</table>
-												</td>
-											</tr>
-										</table>
-									</td>
-								</tr>
-							</table>
-							<!-- Home : END -->
-
-							<!-- Coupon Code : BEGIN -->
-							<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff">
-								<tr>
-									<td align="center" style="padding: 20px 40px 50px;">
-										<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff">
-											<tr>
-												<td style="font-family: Arial, sans-serif; line-height: 16px; text-align: center; padding-bottom: 20px; color: #122b49;">
-													<h3 style="font-size: 15px;">
-														Easter Day Sales
-													</h3>
-												</td>
-											</tr>
-											<tr>
-												<td style="font-family: 'Tinos', Arial, sans-serif; line-height: 40px; text-align: center; padding-bottom: 10px; color: #122b49;">
-													<h3 style="font-size: 40px; font-weight: 300;">
-														Get Your Glow On
-													</h3>
-												</td>
-											</tr>
-											<tr>
-												<td style="font-family: Arial, sans-serif; line-height: 26px; text-align: center; padding-bottom: 20px; color: #122b49;">
-													<p style="font-size: 16px;">
-														Our team of beauty experts have curated the best products for you, along with helpful tips and tricks 
-														to help you make the most out of your beauty routine.
-													</p>
-												</td>
-											</tr>
-											<tr>
-												<td align="center">
-													<table cellpadding="0" cellspacing="0" border="0">
-														<tr>
-															<td style="font-family: Arial, sans-serif; font-size: 16px; line-height: 22px; text-align: center; padding: 12px 20px; border-radius: 10px; 
-															background-color: #122b49; color: #ffffff;">
-																<span>
-																	<a href="#" target="_blank" style="text-decoration: none; color: #ffffff;">
-																		<span style="text-decoration: none; color: #ffffff;">
-																			Coupon Code: <strong>HAPPYEASTER</strong>
-																		</span>
-																	</a>
-																</span>
-															</td>
-														</tr>
-													</table>
-												</td>
-											</tr>
-										</table>
-									</td>
-								</tr>
-							</table>
-							<!-- Coupon Code : END -->
-
-							<!-- 2 Column Row 1 : Begin -->
-							<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff">
-								<tr>
-									<td align="center" style="padding: 0 10px 40px;">
-										<table cellpadding="0" cellspacing="0" border="0" width="100%">
-											<tr>
-												<td align="center">
-													<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff">
-														<tr>
-															<!-- Left Column : BEGIN -->
-															<th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
-																<table cellpadding="0" cellspacing="0" border="0" width="100%">
-																	<tr>
-																		<td class="center m-center" style="font-size: 0pt; line-height: 0pt; text-align: left;">
-																			<img class="fluid-img" src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/image_11.png?raw=true"
-																			width="300" height="275" border="0" alt="">
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="font-family: 'Tinos', Arial, sans-serif; line-height: 26px; padding-top: 15px; padding-bottom: 10px; color: #122b49;">
-																			<h3 style="font-size: 25px; font-weight: normal;">
-																				Face Oil
-																			</h3>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="font-family: Arial, sans-serif; line-height: 22px; padding-bottom: 20px; color: #122b49;">
-																			<p style="font-size: 16px; ">
-																				The best face oils nourish the skin and provide other benefits, 
-																				like antioxidant protection, anti-aging properties, and more.
-																			</p>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td align="center">
-																			<table cellpadding="0" cellspacing="0" border="0">
-																				<tr>
-																					<td style="font-family: Arial, sans-serif; font-size: 16px; line-height: 22px; text-transform: uppercase; text-align: center; padding: 12px 30px; 
-																					border-radius: 10px; background-color: #122b49; color: #ffffff;">
-																						<span style="text-decoration: none; color: #ffffff;">
-																							<a href="#" target="_blank" style="text-decoration: none; color: #ffffff;">
-																								<span>
-																									Shop Now | <strong>34$</strong>
-																								</span>
-																							</a>
-																						</span>
-																					</td>
-																				</tr>
-																			</table>
-																		</td>
-																	</tr>
-																</table>
-															</th>
-															<!-- Left Column : END -->
-
-															<th class="column-empty2" width="10" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;"></th>
-
-															<!-- Right Column : BEGIN -->
-															<th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
-																<table cellpadding="0" cellspacing="0" border="0" width="100%">
-																	<tr>
-																		<td class="center m-center" style="font-size: 0pt; line-height: 0pt; text-align: left;">
-																			<img class="fluid-img" src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/image_10.png?raw=true"
-																			width="300" height="275" border="0" alt="">
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="font-family: 'Tinos', Arial, sans-serif; line-height: 26px; padding-top: 15px; padding-bottom: 10px; color: #122b49;">
-																			<h3 style="font-size: 25px; font-weight: normal;">
-																				Face Cream
-																			</h3>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="font-family: Arial, sans-serif; line-height: 22px; padding-bottom: 20px; color: #122b49;">
-																			<p style="font-size: 16px; ">
-																				Applying a face cream is a fundamental step in any beauty routine. 
-																				Make sure you choose the right cream for your skin type.
-																			</p>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td align="center">
-																			<table cellpadding="0" cellspacing="0" border="0">
-																				<tr>
-																					<td style="font-family: Arial, sans-serif; font-size: 16px; line-height: 22px; text-transform: uppercase; text-align: center; padding: 12px 30px; 
-																					border-radius: 10px; background-color: #122b49; color: #ffffff;">
-																						<span style="text-decoration: none; color: #ffffff;">
-																							<a href="#" target="_blank" style="text-decoration: none; color: #ffffff;">
-																								<span>
-																									Shop Now | <strong>24$</strong>
-																								</span>
-																							</a>
-																						</span>
-																					</td>
-																				</tr>
-																			</table>
-																		</td>
-																	</tr>
-																</table>
-															</th>
-															<!-- Right Column : END -->
-														</tr>
-													</table>
-												</td>
-											</tr>
-										</table>
-									</td>
-								</tr>
-							</table>
-							<!-- 2 Column Row 1 : END -->
-
-							<!-- 2 Column Row 2 : Begin -->
-							<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff">
-								<tr>
-									<td align="center" style="padding: 0 10px 40px;">
-										<table cellpadding="0" cellspacing="0" border="0" width="100%">
-											<tr>
-												<td align="center">
-													<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff">
-														<tr>
-															<!-- Left Column : BEGIN -->
-															<th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
-																<table cellpadding="0" cellspacing="0" border="0" width="100%">
-																	<tr>
-																		<td class="center m-center" style="font-size: 0pt; line-height: 0pt; text-align: left;">
-																			<img class="fluid-img" src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/image_12.png?raw=true"
-																			width="300" height="275" border="0" alt="">
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="font-family: 'Tinos', Arial, sans-serif; line-height: 26px; padding-top: 15px; padding-bottom: 10px; color: #122b49;">
-																			<h3 style="font-size: 25px; font-weight: normal;">
-																				Contour Eye Cream
-																			</h3>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="font-family: Arial, sans-serif; line-height: 22px; padding-bottom: 20px; color: #122b49;">
-																			<p style="font-size: 16px; ">
-																				 Our fragrance & cruelty free, powerfully targeted eye creams firm & revitalize your eyes.
-																			</p>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td align="center">
-																			<table cellpadding="0" cellspacing="0" border="0">
-																				<tr>
-																					<td style="font-family: Arial, sans-serif; font-size: 16px; line-height: 22px; text-transform: uppercase; text-align: center; padding: 12px 30px; 
-																					border-radius: 10px; background-color: #122b49; color: #ffffff;">
-																						<span style="text-decoration: none; color: #ffffff;">
-																							<a href="#" target="_blank" style="text-decoration: none; color: #ffffff;">
-																								<span>
-																									Shop Now | <strong>28$</strong>
-																								</span>
-																							</a>
-																						</span>
-																					</td>
-																				</tr>
-																			</table>
-																		</td>
-																	</tr>
-																</table>
-															</th>
-															<!-- Left Column : END -->
-
-															<th class="column-empty2" width="10" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;"></th>
-
-															<!-- Right Column : BEGIN -->
-															<th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
-																<table cellpadding="0" cellspacing="0" border="0" width="100%">
-																	<tr>
-																		<td class="center m-center" style="font-size: 0pt; line-height: 0pt; text-align: left;">
-																			<img class="fluid-img" src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/image_13.png?raw=true"
-																			width="300" height="275" border="0" alt="">
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="font-family: 'Tinos', Arial, sans-serif; line-height: 26px; padding-top: 15px; padding-bottom: 10px; color: #122b49;">
-																			<h3 style="font-size: 25px; font-weight: normal;">
-																				Makeup Remover
-																			</h3>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="font-family: Arial, sans-serif; line-height: 22px; padding-bottom: 20px; color: #122b49;">
-																			<p style="font-size: 16px; ">
-																				Among testers, 100% found that the balm washed off easily and didn’t 
-																				cause breakouts or irritation.
-																			</p>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td align="center">
-																			<table cellpadding="0" cellspacing="0" border="0">
-																				<tr>
-																					<td style="font-family: Arial, sans-serif; font-size: 16px; line-height: 22px; text-transform: uppercase; text-align: center; padding: 12px 30px; 
-																					border-radius: 10px; background-color: #122b49; color: #ffffff;">
-																						<span style="text-decoration: none; color: #ffffff;">
-																							<a href="#" target="_blank" style="text-decoration: none; color: #ffffff;">
-																								<span>
-																									Shop Now | <strong>12$</strong>
-																								</span>
-																							</a>
-																						</span>
-																					</td>
-																				</tr>
-																			</table>
-																		</td>
-																	</tr>
-																</table>
-															</th>
-															<!-- Right Column : END -->
-														</tr>
-													</table>
-												</td>
-											</tr>
-										</table>
-									</td>
-								</tr>
-							</table>
-							<!-- 2 Column Row 2 : END -->
-
-							<!-- Features : BEGIN -->
-							<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#D98582">
-								<tr>
-									<td align="center" style="padding: 20px 0;">
-										<table cellpadding="0" cellspacing="0" border="0" >
-											<tr>
-												<!-- Item 1 : BEGIN -->
-												<th class="column" width="225" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
-													<table cellpadding="0" cellspacing="0" border="0" width="100%">
-														<tr>
-															<td align="center">
-																<table cellpadding="0" cellspacing="0" border="0">
-																	<tr>
-																		<td align="center" class="center m-center" style="font-size: 0pt; line-height: 0pt; text-align: center; padding-bottom: 10px;">
-																			<img class="fluid-img" src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/Group-1.png?raw=true"
-																			width="65" height="65" border="0" alt="">
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="font-family: Arial, sans-serif; line-height: 22px; color: #ffffff;">
-																			<h3 style="font-size: 18px; font-weight: normal;">
-																				Cruelty Free
-																			</h3>
-																		</td>
-																	</tr>
-																</table>
-															</td>
-														</tr>
-													</table>
-												</th>
-												<!-- Item 1 : END -->
-
-												<th class="column-empty2" width="20" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;"></th>
-
-												<!-- Item 2 : BEGIN -->
-												<th class="column" width="225" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
-													<table cellpadding="0" cellspacing="0" border="0" width="100%">
-														<tr>
-															<td align="center">
-																<table cellpadding="0" cellspacing="0" border="0">
-																	<tr>
-																		<td align="center" class="center m-center" style="font-size: 0pt; line-height: 0pt; text-align: center; padding-bottom: 10px;">
-																			<img class="fluid-img" src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/Group-2.png?raw=true"
-																			width="65" height="65" border="0" alt="">
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="font-family: Arial, sans-serif; line-height: 22px; color: #ffffff;">
-																			<h3 style="font-size: 18px; font-weight: normal;">
-																				No Nasty Toxins
-																			</h3>
-																		</td>
-																	</tr>
-																</table>
-															</td>
-														</tr>
-													</table>
-												</th>
-												<!-- Item 2 : END -->
-
-												<th class="column-empty2" width="20" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;"></th>
-
-												<!-- Item 3 : BEGIN -->
-												<th class="column" width="225" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
-													<table cellpadding="0" cellspacing="0" border="0" width="100%">
-														<tr>
-															<td align="center">
-																<table cellpadding="0" cellspacing="0" border="0" >
-																	<tr>
-																		<td align="center" class="center m-center" style="font-size: 0pt; line-height: 0pt; text-align: center; padding-bottom: 10px;">
-																			<img class="fluid-img" src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/Group-3.png?raw=true"
-																			width="65" height="65" border="0" alt="">
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="font-family: Arial, sans-serif; line-height: 22px; color: #ffffff;">
-																			<h3 style="font-size: 18px; font-weight: normal;">
-																				1% to Charity
-																			</h3>
-																		</td>
-																	</tr>
-																</table>
-															</td>
-														</tr>
-													</table>
-												</th>
-												<!-- Item 3 : END -->
-											</tr>
-										</table>
-									</td>
-								</tr>
-							</table>
-							<!-- Features : END -->
-
-							<!-- Testimonials : BEGIN -->
-							<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#CEDCE5">
-								<tr>
-									<td align="center" style="padding: 20px;">
-										<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#CEDCE5">
-											<!-- Heading : BEGIN -->
-											<tr>
-												<td style="font-family: Arial, sans-serif; line-height: 22px; text-align: center; padding-top: 20px; padding-bottom: 20px; color: #122b49;">
-													<h3 style="font-size: 15px; ">
-														Testimonials
-													</h3>
-												</td>
-											</tr>
-
-											<tr>
-												<td style="font-family: 'Tinos', Arial, sans-serif; line-height: 34px; text-align: center; padding-bottom: 30px; color: #122b49;">
-													<h2 style="font-size: 30px; font-weight: normal;">
-														What Our Customers Say
-													</h2>
-												</td>
-											</tr>
-											<!-- Heading : END -->
-											<tr>
-												<td align="center">
-													<table cellpadding="0" cellspacing="0" border="0" width="100%">
-														<tr>
-															<!-- Left Column : BEGIN -->
-															<th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
-																<table cellpadding="0" cellspacing="0" border="0" width="100%">
-																	<tr>
-																		<td style="font-family: 'Tinos', Arial, sans-serif; line-height: 22px; text-align: center; padding-bottom: 10px; color: #122b49;">
-																			<h4 style="font-size: 20px; font-weight: normal; padding-bottom: 10px;">
-																				Lucas
-																			</h4>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="font-family: Arial, sans-serif; line-height: 24px; padding-bottom: 10px; color: #122b49;">
-																			<p style="font-size: 15px;">
-																				I would highly recommend these products to anyone who is looking for 
-																				high-quality skincare products that deliver real results.
-																			</p>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="font-size: 0pt; line-height: 0pt; text-align: center;">
-																			<img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/review-2.png?raw=true" 
-																			width="103" height="103" border="0" alt="">
-																		</td>
-																	</tr>
-																</table>
-															</th>
-															<!-- Left Column : END -->
-
-															<th class="column-empty2" width="30" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;"></th>
-
-															<!-- Right Column : BEGIN -->
-															<th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
-																<table cellpadding="0" cellspacing="0" border="0" width="100%">
-																	<tr>
-																		<td style="font-family: 'Tinos', Arial, sans-serif; line-height: 22px; text-align: center; padding-bottom: 10px; color: #122b49;">
-																			<h4 style="font-size: 20px; font-weight: normal; padding-bottom: 10px;">
-																				Laura
-																			</h4>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="font-family: Arial, sans-serif; line-height: 24px; padding-bottom: 10px; color: #122b49;">
-																			<p style="font-size: 15px;">
-																				The eye contour cream is a luxurious, rich cream that is specifically 
-																				formulated for the delicate skin around the eyes. 
-																			</p>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="font-size: 0pt; line-height: 0pt; text-align: center;">
-																			<img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/review.png?raw=true" 
-																			width="103" height="103" border="0" alt="">
-																		</td>
-																	</tr>
-																</table>
-															</th>
-															<!-- Right Column : END -->
-														</tr>
-													</table>
-												</td>
-											</tr>
-										</table>
-									</td>
-								</tr>
-							</table>
-							<!-- Testimonials : END -->
-
-							<!-- Footer : BEGIN -->
-							<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#122b49">
-								<tr>
-									<td align="center" style="padding: 20px;">
-										<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#122b49">
-											<!-- Logo : BEGIN -->
-											<tr>
-												<td style="font-size: 0pt; line-height: 0pt; text-align: center; padding-bottom: 20px;">
-													<img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/light_logo.png?raw=true"
-													width="92" height="64" border="0" alt="">
-												</td>
-											</tr>
-											<!-- Logo : END -->
-
-											<!-- Social : BEGIN -->
-											<tr>
-												<td align="center" style="padding-bottom: 20px;">
-													<table cellpadding="0" cellspacing="0" border="0">
-														<tr>
-															<td width="40" style="font-size: 0pt; line-height: 0pr; text-align: left;">
-																<a href="#" target="_blank">
-																	<img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/facebook@2x.png?raw=true"
-																	width="32" height="32" border="0" alt="">
-																</a>
-															</td>
-															<td width="40" style="font-size: 0pt; line-height: 0pr; text-align: left;">
-																<a href="#" target="_blank">
-																	<img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/twitter@2x.png?raw=true"
-																	width="32" height="32" border="0" alt="">
-																</a>
-															</td>
-															<td width="40" style="font-size: 0pt; line-height: 0pr; text-align: left;">
-																<a href="#" target="_blank">
-																	<img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/linkedin@2x.png?raw=true"
-																	width="32" height="32" border="0" alt="">
-																</a>
-															</td>
-															<td width="40" style="font-size: 0pt; line-height: 0pr; text-align: left;">
-																<a href="#" target="_blank">
-																	<img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/instagram@2x.png?raw=true"
-																	width="32" height="32" border="0" alt="">
-																</a>
-															</td>
-														</tr>
-													</table>
-												</td>
-											</tr>
-											<!-- Social : END -->
-
-											<tr>
-												<td style="font-size: Arial, sans-serif; line-height: 20px; text-align: center; padding-bottom: 15px; color: #ffffff;">
-													<p style="font-size: 14px;">
-														Company Name | Company Locations
-													</p>
-												</td>
-											</tr>
-
-											<tr>
-												<td style="font-size: Arial, sans-serif; line-height: 20px; text-align: center; padding-bottom: 15px; color: #ffffff;">
-													<p style="font-size: 14px;">
-														Questions? Emails us at <a href="#" target="_blank" style="text-decoration: underline; color: #ffffff;">example@example.com</a> <br />
-														Questions relating to privacy and the protection of your personal information should be sent to <br />
-														<a href="#" target="_blank" style="text-decoration: underline; color: #ffffff;">example@example.com</a>
-													</p>
-												</td>
-											</tr>
-
-											<tr>
-												<td style="font-size: Arial, sans-serif; line-height: 20px; text-align: center; padding-bottom: 15px;  color: #ffffff;">
-													<p style="font-size: 14px;">
-														Changed your mind? You can <a href="#" target="_blank" style="text-decoration: underline; color: #ffffff;">no-content</a> at any time.
-													</p>
-												</td>
-											</tr>
-
-											<tr>
-												<td style="font-size: Arial, sans-serif; line-height: 20px; text-align: center; padding-bottom: 15px;  color: #ffffff;">
-													<p style="font-size: 14px;">
-														Company | 123 Street Name, City Name, Country Name Post Code AB12 34CD
-													</p>
-												</td>
-											</tr>
-										</table>
-									</td>
-								</tr>
-							</table>
-							<!-- Footer : END -->
+                        <td class="center m-center" style="font-size: 0pt; line-height: 0pt; margin: 0; padding: 20px 10px; text-align: center;">
+                            <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/logo.png?raw=true" width="92" height="auto" alt="Company Logo" border="0" style="width: 100%; max-width: 92px; height: auto; 
+                            background: #ffffff; font-family: sans-serif; font-size: 16px; line-height: 16px; color: #122b49; margin: auto; display: block;" class="g-img">
                         </td>
                     </tr>
                 </table>
             </td>
         </tr>
-	</table>
-	<!-- Email Body : END -->
+        <!-- Logo : END -->
+
+        <!-- Navigation : BEGIN -->
+        <tr>
+            <td align="center" style="padding: 10px; background-color: #ffffff;" class="darkmode-bg">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" >
+                    <th class="column" width="45" style="font-family: 'Nunito', Arial, sans-serif; font-size: 18px; text-align: center; line-height: 22px; 
+                    color: #122b49;">
+                        <span style="text-decoration: none; color: #122b49;">
+                            <a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
+                                Shop
+                            </a>
+                        </span>
+                    </th>
+
+                    <th class="column-empty" width="20" style="font-size: 0pt; line-height: 0pt; margin: 0; padding: 0;"></th>
+
+                    <th class="column" width="90" style="font-family: 'Nunito', Arial, sans-serif; font-size: 18px; line-height: 22px; 
+                    color: #122b49;">
+                        <span style="text-decoration: none; color: #122b49;">
+                            <a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
+                                Best Seller
+                            </a>
+                        </span>
+                    </th>
+
+                    <th class="column-empty" width="20" style="font-size: 0pt; line-height: 0pt; margin: 0; padding: 0;"></th>
+
+                    <th class="column" width="45" style="font-family: 'Nunito', Arial, sans-serif; font-size: 18px; line-height: 22px; 
+                    color: #122b49;">
+                        <span style="text-decoration: none; color: #122b49;">
+                            <a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
+                                Blog
+                            </a>
+                        </span>
+                    </th>
+
+                    <th class="column-empty" width="20" style="font-size: 0pt; line-height: 0pt; margin: 0; padding: 0;"></th>
+
+                    <th class="column" width="45" style="font-family: 'Nunito', Arial, sans-serif; font-size: 18px; line-height: 22px; 
+                    color: #122b49;">
+                        <span style="text-decoration: none; color: #122b49;">
+                            <a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
+                                Contacts
+                            </a>
+                        </span>
+                    </th>
+                </table>
+            </td>
+        </tr>
+        <!-- Navigation : END -->
+
+        <!-- Home : BEGIN -->
+        <tr>
+            <td align="center">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#CEDCE5">
+                    <!-- Text : BEGIN -->
+                    <tr>
+                        <td align="center" style="padding: 0 10px;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#CEDCE5">
+                                <tr>
+                                    <td style="font-family: 'Nunito', Arial, sans-serif; font-style: italic; 
+                                    text-align: center; padding-top: 40px; padding-bottom: 20px; color: #122b49;">
+                                        <h2 style="font-size: 24px; line-height: 32px; font-weight: normal;">
+                                            Eggstra - Eggstra
+                                        </h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-family: 'Tinos', Arial, sans-serif; text-align: center; text-transform: uppercase; padding-bottom: 10px; 
+                                    color: #122b49;">
+                                        <h2 style="font-size: 50px;  line-height: 54px;">
+                                            Easter Sales
+                                        </h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-family: Arial, sans-serif; text-align: center; text-transform: uppercase; padding-bottom: 20px; 
+                                    color: #122b49;">
+                                        <h2 style="font-size: 40px; line-height: 44px;">
+                                            <strong>30% Off</strong>
+                                        </h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-pd" style="font-family: Arial, sans-serif; text-align: center; padding: 0 60px 30px; color: #122b49;">
+                                        <p style="font-size: 18px; line-height: 28px;">
+                                            Spring is in full bloom, and we're excited to bring you the latest beauty 
+                                            trends and essential products to help you look and feel your best this 
+                                            season. We have everything you need to achieve that fresh and 
+                                            glowing Easter look. 
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Text : END -->
+                    <!-- Button : BEGIN -->
+                    <tr>
+                        <td align="center" style="padding-bottom: 10px;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="150">
+                                <tr>
+                                    <td style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 24px; text-transform: uppercase; text-align: center; 
+                                    padding: 12px 20px; border-radius: 10px; border: 1px solid #122b49;  background-color: transparent; color: #122b49;">
+                                        <span style="text-decoration: none; color: #122b49;">
+                                            <a href="#" target="_blank" style="text-decoration: none; color: #122b49;">
+                                                <span>Hurry Up</span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Button : END -->
+                    <!-- Image : BEGIN -->
+                    <tr>
+                        <td align="center">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td class="fluid-img" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
+                                        <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/high-angle-different-beauty-blenders.png?raw=true" width="650" height="auto" 
+                                        alt="Easter eggs background imagge" border="0" style="width: 100%; max-width: 650px; height: auto; background: #CEDCE5; font-family: sans-serif; font-size: 16px; line-height: 16px; color: #122b49; 
+                                        margin: auto; display: block;" class="g-img">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Image : END -->
+                </table>
+            </td>
+        </tr>
+        <!-- Home : END -->
+
+        <!-- Coupon Code : BEGIN -->
+        <tr>
+            <td align="center">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff">
+                    <tr>
+                        <td align="center" style="padding: 20px 40px 50px;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff">
+                                <tr>
+                                    <td style="font-family: Arial, sans-serif; text-align: center; padding-bottom: 20px; color: #122b49;">
+                                        <h3 style="font-size: 14px; line-height: 16px;">
+                                            Easter Day Sales
+                                        </h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-family: 'Tinos', Arial, sans-serif;  text-align: center; padding-bottom: 10px; color: #122b49;">
+                                        <h3 style="font-size: 40px; line-height: 40px; font-weight: 300;">
+                                            Get Your Glow On
+                                        </h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-family: Arial, sans-serif; text-align: center; padding-bottom: 20px; color: #122b49;">
+                                        <p style="font-size: 16px; line-height: 26px; ">
+                                            Our team of beauty experts have curated the best products for you, along with helpful tips and tricks 
+                                            to help you make the most out of your beauty routine.
+                                        </p>
+                                    </td>
+                                </tr>
+                                <!-- Button : BEGIN -->
+                                <tr>
+                                    <td align="center">
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td style="font-family: Arial, sans-serif; font-size: 16px; line-height: 22px; text-align: center; padding: 12px 20px; border-radius: 10px; 
+                                                background-color: #122b49; color: #ffffff;">
+                                                    <span>
+                                                        <a href="#" target="_blank" style="text-decoration: none; color: #ffffff;">
+                                                            <span style="text-decoration: none; color: #ffffff;">
+                                                                Coupon Code: <strong>HAPPYEASTER</strong>
+                                                            </span>
+                                                        </a>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <!-- Button : END -->
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- Coupon Code : END -->
+
+        <!-- 2 Column Row 1 : Begin -->
+        <tr>
+            <td align="center">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff">
+                    <tr>
+                        <td align="center" style="padding: 0 10px 40px;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff">
+                                <tr>
+                                    <!-- Left Column : BEGIN -->
+                                    <th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
+                                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                            <tr>
+                                                <td class="center m-center" style="font-size: 0pt; line-height: 0pt; text-align: left;">
+                                                    <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/image_11.png?raw=true" width="300" height="" alt="Face oil image" border="0" 
+                                                    style="width: 100%; max-width: 300px; height: auto; background: #ffffff; font-family: sans-serif; font-size: 16px; line-height: 18px; color: #122b49; margin: auto; 
+                                                    display: block;" class="g-img">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: 'Tinos', Arial, sans-serif; text-align: center; padding: 15px 0 10px; color: #122b49;">
+                                                    <h3 style="font-size: 24px; line-height: 26px; font-weight: normal;">
+                                                        Face Oil
+                                                    </h3>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: Arial, sans-serif; text-align: center; padding-bottom: 20px; color: #122b49;">
+                                                    <p style="font-size: 16px; line-height: 22px; ">
+                                                        The best face oils nourish the skin and provide other benefits, 
+                                                        like antioxidant protection, anti-aging properties, and more.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">
+                                                    <table cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td style="font-family: Arial, sans-serif; font-size: 16px; line-height: 22px; text-transform: uppercase; text-align: center; padding: 12px 30px; 
+                                                            border-radius: 10px; background-color: #122b49; color: #ffffff;">
+                                                                <span style="text-decoration: none; color: #ffffff;">
+                                                                    <a href="#" target="_blank" style="text-decoration: none; color: #ffffff;">
+                                                                        <span>
+                                                                            Shop Now | <strong>34$</strong>
+                                                                        </span>
+                                                                    </a>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </th>
+                                    <!-- Left Column : END -->
+
+                                    <th class="column-empty2" width="10" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;"></th>
+
+                                    <!-- Right Column : BEGIN -->
+                                    <th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
+                                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                            <tr>
+                                                <td class="center m-center" style="font-size: 0pt; line-height: 0pt; text-align: left;">
+                                                    <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/image_10.png?raw=true" width="300" height="" alt="Face cream image" border="0" 
+                                                    style="width: 100%; max-width: 300px; height: auto; background: #ffffff; font-family: sans-serif; font-size: 16px; line-height: 18px; color: #122b49; margin: auto; 
+                                                    display: block;" class="g-img">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: 'Tinos', Arial, sans-serif; text-align: center; padding: 15px 0 10px; color: #122b49;">
+                                                    <h3 style="font-size: 24px; line-height: 26px;  font-weight: normal;">
+                                                        Face Cream
+                                                    </h3>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: Arial, sans-serif; text-align: center; padding-bottom: 20px; color: #122b49;">
+                                                    <p style="font-size: 16px; line-height: 22px;">
+                                                        Applying a face cream is a fundamental step in any beauty routine. 
+                                                        Make sure you choose the right cream for your skin type.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">
+                                                    <table cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td style="font-family: Arial, sans-serif; font-size: 16px; line-height: 22px; text-transform: uppercase; text-align: center; padding: 12px 30px; 
+                                                            border-radius: 10px; background-color: #122b49; color: #ffffff;">
+                                                                <span style="text-decoration: none; color: #ffffff;">
+                                                                    <a href="#" target="_blank" style="text-decoration: none; color: #ffffff;">
+                                                                        <span>
+                                                                            Shop Now | <strong>24$</strong>
+                                                                        </span>
+                                                                    </a>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </th>
+                                    <!-- Right Column : END -->
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- 2 Column Row 1 : Begin -->
+
+        <!-- 2 Column Row 2 : Begin -->
+        <tr>
+            <td align="center">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff">
+                    <tr>
+                        <td align="center" style="padding: 0 10px 40px;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff">
+                                <tr>
+                                    <!-- Left Column : BEGIN -->
+                                    <th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
+                                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                            <tr>
+                                                <td class="center m-center" style="font-size: 0pt; line-height: 0pt; text-align: left;">
+                                                    <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/image_12.png?raw=true" width="300" height="" alt="Contour eye scream image" border="0" 
+                                                    style="width: 100%; max-width: 300px; height: auto; background: #ffffff; font-family: sans-serif; font-size: 16px; line-height: 18px; color: #122b49; margin: auto; 
+                                                    display: block;" class="g-img">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: 'Tinos', Arial, sans-serif; text-align: center; padding: 15px 0 10px; color: #122b49;">
+                                                    <h3 style="font-size: 24px; line-height: 26px; font-weight: normal;">
+                                                        Contour Eye Cream
+                                                    </h3>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: Arial, sans-serif; text-align: center; padding-bottom: 20px; color: #122b49;">
+                                                    <p style="font-size: 16px; line-height: 22px; ">
+                                                        Our fragrance & cruelty free, powerfully targeted eye creams firm & revitalize your eyes.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">
+                                                    <table cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td style="font-family: Arial, sans-serif; font-size: 16px; line-height: 22px; text-transform: uppercase; text-align: center; padding: 12px 30px; 
+                                                            border-radius: 10px; background-color: #122b49; color: #ffffff;">
+                                                                <span style="text-decoration: none; color: #ffffff;">
+                                                                    <a href="#" target="_blank" style="text-decoration: none; color: #ffffff;">
+                                                                        <span>
+                                                                            Shop Now | <strong>28$</strong>
+                                                                        </span>
+                                                                    </a>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </th>
+                                    <!-- Left Column : END -->
+
+                                    <th class="column-empty2" width="10" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;"></th>
+
+                                    <!-- Right Column : BEGIN -->
+                                    <th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
+                                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                            <tr>
+                                                <td class="center m-center" style="font-size: 0pt; line-height: 0pt; text-align: left;">
+                                                    <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/image_13.png?raw=true" width="300" height="" alt="Makeup remover image" border="0" 
+                                                    style="width: 100%; max-width: 300px; height: auto; background: #ffffff; font-family: sans-serif; font-size: 16px; line-height: 18px; color: #122b49; margin: auto; 
+                                                    display: block;" class="g-img">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: 'Tinos', Arial, sans-serif; text-align: center; padding: 15px 0 10px; color: #122b49;">
+                                                    <h3 style="font-size: 24px; line-height: 26px;  font-weight: normal;">
+                                                        Makeup Remover
+                                                    </h3>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: Arial, sans-serif; text-align: center; padding-bottom: 20px; color: #122b49;">
+                                                    <p style="font-size: 16px; line-height: 22px;">
+                                                        Among testers, 100% found that the balm washed off easily and didn’t 
+													    cause breakouts or irritation.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">
+                                                    <table cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td style="font-family: Arial, sans-serif; font-size: 16px; line-height: 22px; text-transform: uppercase; text-align: center; padding: 12px 30px; 
+                                                            border-radius: 10px; background-color: #122b49; color: #ffffff;">
+                                                                <span style="text-decoration: none; color: #ffffff;">
+                                                                    <a href="#" target="_blank" style="text-decoration: none; color: #ffffff;">
+                                                                        <span>
+                                                                            Shop Now | <strong>12$</strong>
+                                                                        </span>
+                                                                    </a>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </th>
+                                    <!-- Right Column : END -->
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- 2 Column Row 2 : Begin -->
+
+        <!-- Features : BEGIN -->
+        <tr>
+            <td align="center" style="background-color: #D98582;" class="darkmode-bg">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                        <td align="center" style="padding: 20px 10px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <!-- Item 1 : BEGIN -->
+                                    <th class="column" width="200" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
+                                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                            <tr>
+                                                <td align="center">
+                                                    <table cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td align="center" class="center m-center" style="font-size: 0pt; line-height: 0pt; text-align: center; padding-bottom: 10px;">
+                                                                <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/Group-1.png?raw=true" width="65" height="" alt="Image of a bunny" border="0" 
+                                                                style="width: 100%; max-width: 65px; height: auto; background: #D98582; font-family: sans-serif; font-size: 16px; line-height: 18px; color: #ffffff; margin: auto; 
+                                                                display: block;" class="g-img">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-family: Arial, sans-serif; line-height: 22px; color: #ffffff;">
+                                                                <h3 style="font-size: 18px; line-height: 22px; font-weight: normal;">
+                                                                    Cruelty Free
+                                                                </h3>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </th>
+                                    <!-- Item 1 : END -->
+            
+                                    <th class="column-empty2" width="20" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;"></th>
+            
+                                    <!-- Item 2 : BEGIN -->
+                                    <th class="column" width="200" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
+                                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                            <tr>
+                                                <td align="center">
+                                                    <table cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td align="center" class="center m-center" style="font-size: 0pt; line-height: 0pt; text-align: center; padding-bottom: 10px;">
+                                                                <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/Group-2.png?raw=true" width="65" height="" alt="Plant image" border="0" 
+                                                                style="width: 100%; max-width: 65px; height: auto; background: #D98582; font-family: sans-serif; font-size: 16px; line-height: 18px; color: #ffffff; margin: auto; 
+                                                                display: block;" class="g-img">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-family: Arial, sans-serif; color: #ffffff;">
+                                                                <h3 style="font-size: 18px; line-height: 22px; font-weight: normal;">
+                                                                    No Nasty Toxins
+                                                                </h3>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </th>
+                                    <!-- Item 2 : END -->
+            
+                                    <th class="column-empty2" width="20" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;"></th>
+            
+                                    <!-- Item 3 : BEGIN -->
+                                    <th class="column" width="200" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
+                                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                            <tr>
+                                                <td align="center">
+                                                    <table cellpadding="0" cellspacing="0" border="0" >
+                                                        <tr>
+                                                            <td align="center" class="center m-center" style="font-size: 0pt; line-height: 0pt; text-align: center; padding-bottom: 10px;">
+                                                                <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/Group-3.png?raw=true" width="65" height="" alt="Two hands shaking" border="0" 
+                                                                style="width: 100%; max-width: 65px; height: auto; background: #D98582; font-family: sans-serif; font-size: 16px; line-height: 18px; color: #ffffff; margin: auto; 
+                                                                display: block;" class="g-img">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-family: Arial, sans-serif; color: #ffffff;">
+                                                                <h3 style="font-size: 18px; line-height: 22px; font-weight: normal;">
+                                                                    1% to Charity
+                                                                </h3>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </th>
+                                    <!-- Item 3 : END -->
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- Features : BEGIN -->
+
+        <!-- Testimonials : BEGIN -->
+        <tr>
+            <td align="center" bgcolor="#CEDCE5">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                        <td align="center" style="padding-bottom: 20px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <!-- Heading : BEGIN -->
+                                <tr>
+                                    <td style="font-family: Arial, sans-serif; text-align: center; padding-top: 20px; padding-bottom: 20px; color: #122b49;">
+                                        <h3 style="font-size: 16px; line-height: 22px; ">
+                                            Testimonials
+                                        </h3>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="font-family: 'Tinos', Arial, sans-serif; text-align: center; padding-bottom: 50px; color: #122b49;">
+                                        <h2 style="font-size: 30px; line-height: 34px; font-weight: normal;">
+                                            What Our Customers Say
+                                        </h2>
+                                    </td>
+                                </tr>
+                                <!-- Heading : END -->
+                                <tr>
+                                    <td align="center" style="padding: 0 10px;">
+                                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                            <tr>
+                                                <!-- Left Column : BEGIN -->
+                                                <th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
+                                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                        <tr>
+                                                            <td style="font-family: 'Tinos', Arial, sans-serif; text-align: center; padding-bottom: 10px; color: #122b49;">
+                                                                <h4 style="font-size: 20px; line-height: 22px; font-weight: normal; padding-bottom: 10px;">
+                                                                    Lucas
+                                                                </h4>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-family: Arial, sans-serif; text-align: center; padding-bottom: 10px; color: #122b49;">
+                                                                <p style="font-size: 14px; line-height: 24px; ">
+                                                                    I would highly recommend these products to anyone who is looking for 
+                                                                    high-quality skincare products that deliver real results.
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-size: 0pt; line-height: 0pt; text-align: center;">
+                                                                <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/review-2.png?raw=true" width="103" height="" alt="Image of Lucas" border="0" 
+                                                                style="width: 100%; max-width: 103px; height: auto; background: #CEDCE5; font-family: sans-serif; font-size: 16px; line-height: 18px; color: #122b49; margin: auto; 
+                                                                display: block;" class="g-img">
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </th>
+                                                <!-- Left Column : END -->
+
+                                                <th class="column-empty2" width="20" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;"></th>
+
+                                                <!-- Right Column : BEGIN -->
+                                                <th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
+                                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                        <tr>
+                                                            <td style="font-family: 'Tinos', Arial, sans-serif; line-height: 22px; text-align: center; padding-bottom: 10px; color: #122b49;">
+                                                                <h4 style="font-size: 20px; font-weight: normal; padding-bottom: 10px;">
+                                                                    Laura
+                                                                </h4>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-family: Arial, sans-serif; text-align: center;  padding-bottom: 10px; color: #122b49;">
+                                                                <p style="font-size: 14px; line-height: 24px;">
+                                                                    The eye contour cream is a luxurious, rich cream that is specifically 
+                                                                    formulated for the delicate skin around the eyes. 
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-size: 0pt; line-height: 0pt; text-align: center;">
+                                                                <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/review.png?raw=true" width="103" height="" alt="Image of Laura" border="0" 
+                                                                style="width: 100%; max-width: 103px; height: auto; background: #CEDCE5; font-family: sans-serif; font-size: 16px; line-height: 18px; color: #122b49; margin: auto; 
+                                                                display: block;" class="g-img">
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </th>
+                                                <!-- Right Column : END -->
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- Testimonials : END -->
+
+        <!-- Footer : BEGIN -->
+        <tr>
+            <td align="center" bgcolor="#122b49">   
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                        <td align="center" style="padding: 20px 0;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <!-- Logo : BEGIN -->
+                                <tr>
+                                    <td style="font-size: 0pt; line-height: 0pt; text-align: center; padding-bottom: 20px;">
+                                        <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/light_logo.png?raw=true" width="92" height="" alt="Company Logo" 
+                                        border="0" style="width: 100%; max-width: 92px; height: auto; background: #122b49; font-family: sans-serif; font-size: 16px; line-height: 18px; color: #ffffff; 
+                                        margin: auto; display: block;" class="g-img">
+                                    </td>
+                                </tr>
+                                <!-- Logo : END -->
+
+                                <!-- Social : BEGIN -->
+                                <tr>
+                                    <td align="center" style="padding-bottom: 20px;">
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td width="40" style="font-size: 0pt; line-height: 0pr; text-align: left;">
+                                                    <a href="#" target="_blank">
+                                                        <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/facebook@2x.png?raw=true" width="32" height="" alt="Company Logo" 
+                                                        border="0" style="width: 100%; max-width: 32px; height: auto; background: #122b49; font-family: sans-serif; font-size: 16px; line-height: 18px; color: #ffffff; 
+                                                        margin: auto; display: block;" class="g-img">
+                                                    </a>
+                                                </td>
+                                                <td width="40" style="font-size: 0pt; line-height: 0pr; text-align: left;">
+                                                    <a href="#" target="_blank">
+                                                        <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/twitter@2x.png?raw=true" width="32" height="" alt="Company Logo" 
+                                                        border="0" style="width: 100%; max-width: 32px; height: auto; background: #122b49; font-family: sans-serif; font-size: 16px; line-height: 18px; color: #ffffff; 
+                                                        margin: auto; display: block;" class="g-img">
+                                                    </a>
+                                                </td>
+                                                <td width="40" style="font-size: 0pt; line-height: 0pr; text-align: left;">
+                                                    <a href="#" target="_blank">
+                                                        <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/linkedin@2x.png?raw=true" width="32" height="" alt="Company Logo" 
+                                                        border="0" style="width: 100%; max-width: 32px; height: auto; background: #122b49; font-family: sans-serif; font-size: 16px; line-height: 18px; color: #ffffff; 
+                                                        margin: auto; display: block;" class="g-img">
+                                                    </a>
+                                                </td>
+                                                <td width="40" style="font-size: 0pt; line-height: 0pr; text-align: left;">
+                                                    <a href="#" target="_blank">
+                                                        <img src="https://github.com/LucasPerrotaRoriz/MJML-Easter-Promotional-Email-01/blob/main/img/instagram@2x.png?raw=true" width="32" height="" alt="Company Logo" 
+                                                        border="0" style="width: 100%; max-width: 32px; height: auto; background: #122b49; font-family: sans-serif; font-size: 16px; line-height: 18px; color: #ffffff; 
+                                                        margin: auto; display: block;" class="g-img">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- Social : END -->
+
+                                <tr>
+                                    <td style="font-size: Arial, sans-serif; text-align: center; padding-bottom: 15px; color: #ffffff;">
+                                        <p style="font-size: 14px; line-height: 20px;">
+                                            Company Name | Company Locations
+                                        </p>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="font-size: Arial, sans-serif; text-align: center; padding-bottom: 15px; color: #ffffff;">
+                                        <p style="font-size: 14px; line-height: 20px;">
+                                            Questions? Emails us at <a href="#" target="_blank" style="text-decoration: underline; color: #ffffff;">example@example.com</a> <br />
+                                            Questions relating to privacy and the protection of your personal information should be sent to <br />
+                                            <a href="#" target="_blank" style="text-decoration: underline; color: #ffffff;">example@example.com</a>
+                                        </p>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="font-size: Arial, sans-serif; text-align: center; padding-bottom: 15px;  color: #ffffff;">
+                                        <p style="font-size: 14px; line-height: 20px;">
+                                            Changed your mind? You can <a href="#" target="_blank" style="text-decoration: underline; color: #ffffff;">no-content</a> at any time.
+                                        </p>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="font-size: Arial, sans-serif; text-align: center; padding-bottom: 15px;  color: #ffffff;">
+                                        <p style="font-size: 14px; line-height: 20px;">
+                                            Company | 123 Street Name, City Name, Country Name Post Code AB12 34CD
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- Footer : END -->
+    </table>
+    <!-- Email Body : BEGIN -->
 </body>
 </html>
